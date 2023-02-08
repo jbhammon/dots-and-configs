@@ -1,0 +1,7 @@
+[user]
+	email = ____
+	name = Jackson Hammond
+[alias]
+	lg = log --graph --all --decorate --oneline
+	st = status
+	co = checkout
