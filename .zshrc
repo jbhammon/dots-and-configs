@@ -114,6 +114,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+alias node-tree="tree -I 'node_modules' -C"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/jackson/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -134,7 +136,7 @@ unset __conda_setup
 export PATH="$PATH:/Users/jackson/.local/bin"
 
 # >>> AWS SSO configuration >>>
-export AWS_DEFAULT_SSO_START_URL=https://blueconduit.awsapps.com/start
+export AWS_DEFAULT_SSO_START_URL=___
 export AWS_DEFAULT_SSO_REGION=us-east-2
 
 alias sso='aws-sso-util'
@@ -156,13 +158,17 @@ alias gs='git status'
 
 function gas() {
 	git add "$@"
-	echo "Git status after add"
+	echo "🍩 Git status after add"
 	gs
 }
 
 function gaps() {
 	git add "$@" -p
-	echo "Git status after -p add"
+	echo "🍩 Git status after -p add"
 	gs
 }
+
+alias gl='git log --graph --decorate --branches origin/main HEAD'
+alias gla='git log --graph --decorate --all'
+alias gist="git log --graph --decorate --branches origin/main HEAD --pretty=format:'%Cred%h%Creset  %Cgreen(%cd)  %C(bold blue)<%an>%Creset  %C(auto)%d%Creset%n%s%n' --abbrev-commit --date=format:'%Y %b %d'"
 # <<< Git aliases and functions <<<
